@@ -19,6 +19,8 @@ from django.conf.urls import include
 from rest_framework import routers
 from simplybooksapi.views.author import AuthorView
 from simplybooksapi.views.books import BookView
+from django.urls import path
+from simplybooksapi.views import register_user, check_user
 
 
 router = routers.DefaultRouter(trailing_slash=False)
@@ -28,4 +30,6 @@ router.register(r'books', BookView, 'books')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('register', register_user),
+    path('checkuser', check_user),
 ]
