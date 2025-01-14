@@ -23,7 +23,10 @@ from simplybooksapi.views.genre import GenreView
 from django.urls import path
 from simplybooksapi.views.auth import register_user, check_user
 
-
+#USE BUILT IN CLASS IN DJANO SO THE SERVER RESPONDS WITH APPRORIATE METHOD
+#DFR SETS THE RESOURCE FOR EACH METHOD IN THE VIEW
+#TRUE/FALSE TELLS ROUTER TO TO ACCEPT 'AUTHORS'/'BOOKS'/'GENRE'
+#1ST PARAM SETS UP URL, 2ND TELLS SERVER WHICH URL, 3RD BASE NAME OR NICK NAME-SINGULAR VERSION OF URL
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'authors', AuthorView, 'author')
 router.register(r'books', BookView, 'books')

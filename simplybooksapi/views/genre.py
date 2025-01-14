@@ -16,11 +16,11 @@ class GenreView(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
     def list(self, request):
-        game_types = Genre.objects.all()
-        serializer = GenreSerializer(game_types, many=True)
+        genre = Genre.objects.all()
+        serializer = GenreSerializer(genre, many=True)
         return Response(serializer.data)
 
 class GenreSerializer(serializers.ModelSerializer):
     class Meta:
         model = Genre
-        fields = ('id', 'genre')
+        fields = ('id', 'description')
