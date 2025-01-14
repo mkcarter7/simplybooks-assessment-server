@@ -2,3 +2,4 @@ from .author import AuthorView
 from .books import BookView
 from .genre import GenreView
 from .auth import check_user, register_user
+from .book_genre import BookGenreView
