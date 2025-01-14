@@ -28,8 +28,11 @@ class BookGenreView(ViewSet):
         return Response({'message': 'Check query'}, status=status.HTTP_400_BAD_REQUEST)
     
     def create(self, request):
-      bookId = Book.objects.get(pk=request.data["book_id"])
-      genreId = Genre.objects.get(pk=request.data["genre_id"])
+      try:
+        bookId = Book.objects.get(pk=request.data["book_id"])
+        genreId = Genre.objects.get(pk=request.data["genre_id"])
+      except Book.DoesNotExist:
+        return Response({"message": "Book not found."}, status=status.HTTP_404_NOT_FOUND)
 
       bookGenre = BookGenre.objects.create(
           book=bookId,
@@ -39,7 +42,7 @@ class BookGenreView(ViewSet):
       return Response(serializer.data, status=status.HTTP_201_CREATED)
     
     def update(self, request, pk):
-      bookId = Book.objects.get(pk=request.data["book"])
+      bookId = Book.objects.get(pk=request.data["book_id"])
       genreId = Genre.objects.get(pk=request.data["genre"])
       
       bookGenre = BookGenre.objects.get(pk=pk)
