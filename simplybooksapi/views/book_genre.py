@@ -43,11 +43,11 @@ class BookGenreView(ViewSet):
     
     def update(self, request, pk):
       bookId = Book.objects.get(pk=request.data["book_id"])
-      genreId = Genre.objects.get(pk=request.data["genre"])
+      genreId = Genre.objects.get(pk=request.data["genre_id"])
       
       bookGenre = BookGenre.objects.get(pk=pk)
-      bookGenre.book_id = bookId
-      bookGenre.genre_id = genreId
+      bookGenre.book
+      bookGenre.genre
 
       bookGenre.save()
 

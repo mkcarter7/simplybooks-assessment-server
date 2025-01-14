@@ -1,107 +1,104 @@
-Simply Books Assessment - BE Readme
+SIMPLY BOOKS ASSESSMENT - BE README
 
-	About
+ABOUT
 Simply Books is a Django web application for managing books and authors with user specific data.  Firebase is integrated for data management and authentication.
 
 The user is able to manage their book inventory or lists.
 
-	Features
+FEATURES
 User Authentication is used for the user to be able to manage their own books
 The user can manage book and author relationships showing a many to one relationship
 The user can manage book and genre relationships are managed through a many-many  relationship
 The user has full CRUD (create, read, update, delete operations) on books, authors and genre
 
-	Installation
-Basic Django set up
-Or follow below:
-pipenv shell # initialize a new virtual environment
-django-admin startproject projectname
-echo '[FORMAT] \n  good-names=i,j,ex,pk\n\n[MESSAGES CONTROL]\n  disable=broad-except,imported-auth-user,missing-class-docstring,no-self-use,abstract-method\n\n[MASTER]\n  disable=C0114,\n' > .pylintrc
-Open VS Code and press ⌘SHIFTP (Mac), or CtrlSHIFTP (Windows) to open the Command Palette, and select "Python: Select Interpreter".
-Find the option that has:
-<YOUR_FOLDER_NAME>-<RANDOM_STRING>
-Pylint Settings for Django
-Add .vscode directory and add a settings.json with this info
+INSTALLATION
+Basic Django Set Up
+Or Follow Below:
+Pipenv Shell # Initialize A New Virtual Environment
+Django-Admin Startproject Projectname
+Echo '[Format] \N  Good-Names=I,J,Ex,Pk\N\N[Messages Control]\N  Disable=Broad-Except,Imported-Auth-User,Missing-Class-Docstring,No-Self-Use,Abstract-Method\N\N[Master]\N  Disable=C0114,\N' > .Pylintrc
+Open Vs Code And Press ⌘shiftp (Mac), Or Ctrlshiftp (Windows) To Open The Command Palette, And Select "Python: Select Interpreter".
+Find The Option That Has:
+<Your_folder_name>-<Random_string>
+Pylint Settings For Django
+Add .Vscode Directory And Add A Settings.Json With This Info
 {
-    "python.linting.pylintArgs": [
-        "--load-plugins=pylint_django",
-        "--django-settings-module=<folder name>.settings",
+    "Python.Linting.Pylintargs": [
+        "--Load-Plugins=Pylint_django",
+        "--Django-Settings-Module=<Folder Name>.Settings",
     ],
 }
-python manage.py startapp projectnameapi
-Uncomment out the Pipfile.lock line to make sure this gets ignored
-Add .vscode to the .gitignore file.
-Make the below changes to the settings.py file
+Python Manage.Py Startapp Projectnameapi
+Uncomment Out The Pipfile.Lock Line To Make Sure This Gets Ignored
+Add .Vscode To The .Gitignore File.
+Make The Below Changes To The Settings.Py File
 
-# UPDATE THIS
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+# Update This
+Installed_apps = [
+    'django.Contrib.Admin',
+    'django.Contrib.Auth',
+    'django.Contrib.Contenttypes',
+    'django.Contrib.Sessions',
+    'django.Contrib.Messages',
+    'django.Contrib.Staticfiles',
     'rest_framework',
     'corsheaders',
     'levelupapi',
 ]
 
-# THIS IS NEW
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
+# This Is New
+Cors_origin_whitelist = (
+    'http://Localhost:3000',
     'http://127.0.0.1:3000'
 )
 
-# UPDATE THIS
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+# Update This
+Middleware = [
+    'django.Middleware.Security.Securitymiddleware',
+    'django.Contrib.Sessions.Middleware.Sessionmiddleware',
+    'corsheaders.Middleware.Corsmiddleware',
+    'django.Middleware.Common.Commonmiddleware',
+    'django.Middleware.Csrf.Csrfviewmiddleware',
+    'django.Contrib.Auth.Middleware.Authenticationmiddleware',
+    'django.Contrib.Messages.Middleware.Messagemiddleware',
+    'django.Middleware.Clickjacking.Xframeoptionsmiddleware',
 ]
-python manage.py migrate
-Add the below to the .vscode/launch.json file
+Python Manage.Py Migrate
+Add The Below To The .Vscode/Launch.Json File
 {
-    "version": "0.2.0",
-    "configurations": [
+    "Version": "0.2.0",
+    "Configurations": [
         {
-            "name": "Python: Django",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/manage.py",
-            "args": ["runserver"],
-            "django": true,
-            "autoReload":{
-                "enable": true
+            "Name": "Python: Django",
+            "Type": "Python",
+            "Request": "Launch",
+            "Program": "${Workspacefolder}/Manage.Py",
+            "Args": ["Runserver"],
+            "Django": True,
+            "Autoreload":{
+                "Enable": True
             }
         }
     ]
 }
-python manage.py runserver
-Design models and make migrations
-Create fixtures
-You are ready to create views, models, urls, etc.
+Python Manage.Py Runserver
+Design Models And Make Migrations
+Create Fixtures
+You Are Ready To Create Views, Models, Urls, Etc.
 Happy Coding!
 
-	ERD
-![alt text](<Screenshot 2025-01-11 112810.png>)
+ERD
 
-	Video
+VIDEO WALK THROUGH
+https://www.loom.com/share/2ff029f2aa244e6ca6c585b8901e5792
+
+API DOCUMENTS
 
 
-	API Documents
+TECH STACK
 
 
-	Tech Stack
-Django
-Python
-Firebase
-
-	BE Definition of Done
+BE DEFINITION OF DONE
 A feature or task is considered "done" when:
 
 All tasks, features, and fixes must be ticketed and included on the GitHub project board. Make sure the project board uses columns like Backlog, In Progress, Testing, and Done to track work.
