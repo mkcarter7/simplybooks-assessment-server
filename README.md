@@ -1,62 +1,107 @@
-API Structure & Design	
-	
-	5
-	Exceeds Expectations
-	"- API is well-structured and follows RESTful principles.
-- All routes and endpoints are logically organized, including CRUD operations for both books and authors.
-- Efficient error handling for invalid requests and inputs."
+Simply Books Assessment - BE Readme
 
-Endpoints & Routing	
-	
-	5
-	Exceeds Expectations
-	"- Endpoints are clear, well-named, and consistent.
-- Each endpoint performs its function (CRUD) correctly.
-- Dynamic routing is handled efficiently for relationships (e.g., fetching books by author)."
+	About
+Simply Books is a Django web application for managing books and authors with user specific data.  Firebase is integrated for data management and authentication.
 
-Database Interaction	
-	
-	5
-	Exceeds Expectations
-	"- Efficient interaction with the Firebase database.
-- Data is correctly stored and retrieved for both books and authors.
-- All data operations are user-specific and secured.
-- Clear separation between public and private book data (stretch goal)."
+The user is able to manage their book inventory or lists.
 
-Many-to-Many Relationship	
-	
-	5
-	Exceeds Expectations
-	"- Many-to-many relationship is fully implemented (e.g., books with multiple genres or authors associated with multiple publishers).
-- Relationships are properly stored in Firebase.
-- API allows for easy querying of related data."
+	Features
+User Authentication is used for the user to be able to manage their own books
+The user can manage book and author relationships showing a many to one relationship
+The user can manage book and genre relationships are managed through a many-many  relationship
+The user has full CRUD (create, read, update, delete operations) on books, authors and genre
 
-Error Handling & Validation	
-	
-	5
-	Exceeds Expectations
-	"- Excellent error handling across all API routes.
-- Proper validation for input data, preventing bad data from being stored.
-- Custom error messages are user-friendly and helpful."
+	Installation
+Basic Django set up
+Or follow below:
+pipenv shell # initialize a new virtual environment
+django-admin startproject projectname
+echo '[FORMAT] \n  good-names=i,j,ex,pk\n\n[MESSAGES CONTROL]\n  disable=broad-except,imported-auth-user,missing-class-docstring,no-self-use,abstract-method\n\n[MASTER]\n  disable=C0114,\n' > .pylintrc
+Open VS Code and press ⌘SHIFTP (Mac), or CtrlSHIFTP (Windows) to open the Command Palette, and select "Python: Select Interpreter".
+Find the option that has:
+<YOUR_FOLDER_NAME>-<RANDOM_STRING>
+Pylint Settings for Django
+Add .vscode directory and add a settings.json with this info
+{
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+        "--django-settings-module=<folder name>.settings",
+    ],
+}
+python manage.py startapp projectnameapi
+Uncomment out the Pipfile.lock line to make sure this gets ignored
+Add .vscode to the .gitignore file.
+Make the below changes to the settings.py file
 
-Postman Documentation	
-	
-	5
-	Exceeds Expectations
-	"- Postman collection is fully deployed and documented.
-- Includes detailed descriptions for each endpoint, request parameters, and expected responses.
-- Example requests and responses are provided.
-- Collection is easy to follow and use."
+# UPDATE THIS
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
+    'levelupapi',
+]
 
-README & Additional Documentation	
-	
-	5
-	Exceeds Expectations
-	"- README is detailed and well-written.
-- Includes clear instructions for setting up and using the API.
-- Examples of how to authenticate and interact with the API are included.
-- Documentation is thorough and professional."
-BE Definition of Done
+# THIS IS NEW
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://127.0.0.1:3000'
+)
+
+# UPDATE THIS
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+python manage.py migrate
+Add the below to the .vscode/launch.json file
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Django",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "args": ["runserver"],
+            "django": true,
+            "autoReload":{
+                "enable": true
+            }
+        }
+    ]
+}
+python manage.py runserver
+Design models and make migrations
+Create fixtures
+You are ready to create views, models, urls, etc.
+Happy Coding!
+
+	ERD
+![alt text](<Screenshot 2025-01-11 112810.png>)
+
+	Video
+
+
+	API Documents
+
+
+	Tech Stack
+Django
+Python
+Firebase
+
+	BE Definition of Done
 A feature or task is considered "done" when:
 
 All tasks, features, and fixes must be ticketed and included on the GitHub project board. Make sure the project board uses columns like Backlog, In Progress, Testing, and Done to track work.
@@ -107,5 +152,3 @@ Detailed steps for each part of the project can be found in the Guide to getting
 Submit:
 
 Make sure to complete the README, Loom video demonstration, and submit your project with the deployed link.
-
-![alt text](image.png)
