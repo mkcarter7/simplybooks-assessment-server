@@ -31,9 +31,9 @@ class AuthorView(ViewSet):
     
     serializer = AuthorSerializer(authors, many=True)
     return Response(serializer.data)
-  
+  #POST REQUESTS
   def create(self, request):
-    
+    #VALUES FROM CLIENT/FIXTURES
     author = Author.objects.create(
       email=request.data["email"],
       first_name=request.data["first_name"],
