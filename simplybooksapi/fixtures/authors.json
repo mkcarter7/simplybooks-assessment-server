@@ -1,0 +1,35 @@
+[
+  {
+  "model": "simplybooksapi.author",
+  "pk": 1,
+  "fields": {
+    "email": "ta@ta.com",
+    "favorite": true,
+    "first_name": "Tomi",
+    "last_name": "Adeyemi",
+    "uid": "1"
+  }
+},
+{
+  "model": "simplybooksapi.author",
+  "pk": 2,
+  "fields": {
+    "email": "ba@obama.com",
+    "favorite": true,
+    "first_name": "Barack",
+    "last_name": "Obama",
+    "uid": "2"
+  }
+},
+{
+  "model": "simplybooksapi.author",
+  "pk": 3,
+  "fields": {
+    "email": "hz@zinn.com",
+    "favorite": false,
+    "first_name": "Howard",
+    "last_name": "Zinn",
+    "uid": "3"
+  }
+}
+]
