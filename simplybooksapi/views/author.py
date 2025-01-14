@@ -8,9 +8,10 @@ from simplybooksapi.models.book import Book
 
 
 class AuthorView(ViewSet):
-  
+  #GETS A SINGLE OBJECT FROM THE DB BASED ON THE PK IN THE URL
+  #USE ORM TO GET DATA
   def retrieve(self, request, pk):
-    
+  #SERIALIZER CONVERTS DATA TO JSON  
     try:
       author = Author.objects.get(pk=pk)
       book_count = Book.objects.filter(author=author).count()
@@ -21,7 +22,7 @@ class AuthorView(ViewSet):
       return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
     
   def list(self, request):
-    
+    #GET ALL OJECTS FROM DATABASE. ORM IS ALL
     authors = Author.objects.all()
     
     favorite = request.query_params.get('favorite', None)
@@ -65,7 +66,7 @@ class AuthorView(ViewSet):
     author = Author.objects.get(pk=pk)
     author.delete()
     return Response(None, status=status.HTTP_204_NO_CONTENT)
-  
+  #SERIALIZER CLASS DETERMINES HOW PYTHON DATA SHOULD BE SERIALIZED TO BE SENT BACK TO CLIENT
 class AuthorSerializer(serializers.ModelSerializer):
   
   class Meta:
