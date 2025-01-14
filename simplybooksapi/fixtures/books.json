@@ -1,0 +1,41 @@
+[
+  {
+    "model": "simplybooksapi.book",
+    "pk": 1,
+    "fields": {
+      "author": "1",
+      "title": "A People's History of the United States of America",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51529Lfc2ML.jpg",
+      "price": "30.00",
+      "sale": false,
+      "uid": "1",
+      "description": "new book"
+    }
+  },
+  {
+    "model": "simplybooksapi.book",
+    "pk": 2,
+    "fields": {
+      "author": "2",
+      "title": "Concrete Rose",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81rRRmZZvZL.jpg",
+      "price": "15.89",
+      "sale": false,
+      "uid": "2",
+      "description": "old book"
+    }
+  },
+  {
+    "model": "simplybooksapi.book",
+    "pk": 3,
+    "fields": {
+      "author": "3",
+      "title": "The Underground Railroad",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/A1Cu4ywUeyL.jpg",
+      "price": "25.00",
+      "sale": true,
+      "uid": "3",
+      "description": "next book"
+    }
+  }
+]
