@@ -1,36 +1,36 @@
-#SIMPLY BOOKS ASSESSMENT - BE README
+SIMPLY BOOKS ASSESSMENT - BE README
 
-#ABOUT
+ABOUT
 Simply Books is a Django web application for managing books and authors with user specific data.  Firebase is integrated for data management and authentication.
 
 The user is able to manage their book inventory or lists.
 
-#FEATURES
+FEATURES
 User Authentication is used for the user to be able to manage their own books
 The user can manage book and author relationships showing a many to one relationship
 The user can manage book and genre relationships are managed through a many-many  relationship
 The user has full CRUD (create, read, update, delete operations) on books, authors and genre
 
-#INSTALLATION
+INSTALLATION
 Basic Django Set Up
 https://github.com/nashville-software-school/server-side-python-curriculum/blob/evening-cohorts/book-3-levelup/chapters/DRF_INSTALLS.md
 
-#ERD
-
-#VIDEO WALK THROUGH
+ERD
+![alt text](<Screenshot 2025-01-11 112810-1.png>)
+VIDEO WALK THROUGH
 https://www.loom.com/share/2ff029f2aa244e6ca6c585b8901e5792
 
-#API DOCUMENTS
+API DOCUMENTS
 https://documenter.getpostman.com/view/33251382/2sAYQXpYXu
 
-#TECH STACK
+TECH STACK
 Django
 Python
 Postman
 Firebase Auth
 
 
-#BE DEFINITION OF DONE
+BE DEFINITION OF DONE
 A feature or task is considered "done" when:
 
 All tasks, features, and fixes must be ticketed and included on the GitHub project board. Make sure the project board uses columns like Backlog, In Progress, Testing, and Done to track work.
@@ -44,7 +44,7 @@ For any stretch goals, the feature must be functional and demonstrate proper use
 Any issues or bugs identified during development or testing must be fixed by the developer. All work related to fixes must be ticketed and included on the GitHub project board.
 The project board must reflect all tasks, bugs, and updates, with each task being moved through the proper columns (Backlog, In Progress, Testing, Done).
 
-#MVP Guidelines
+MVP Guidelines
 The Minimum Viable Product (MVP) for the Simply Books project includes:
 
 CRUD Functionality for Books and Authors:
