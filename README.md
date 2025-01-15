@@ -1,104 +1,36 @@
-SIMPLY BOOKS ASSESSMENT - BE README
+#SIMPLY BOOKS ASSESSMENT - BE README
 
-ABOUT
+#ABOUT
 Simply Books is a Django web application for managing books and authors with user specific data.  Firebase is integrated for data management and authentication.
 
 The user is able to manage their book inventory or lists.
 
-FEATURES
+#FEATURES
 User Authentication is used for the user to be able to manage their own books
 The user can manage book and author relationships showing a many to one relationship
 The user can manage book and genre relationships are managed through a many-many  relationship
 The user has full CRUD (create, read, update, delete operations) on books, authors and genre
 
-INSTALLATION
+#INSTALLATION
 Basic Django Set Up
-Or Follow Below:
-Pipenv Shell # Initialize A New Virtual Environment
-Django-Admin Startproject Projectname
-Echo '[Format] \N  Good-Names=I,J,Ex,Pk\N\N[Messages Control]\N  Disable=Broad-Except,Imported-Auth-User,Missing-Class-Docstring,No-Self-Use,Abstract-Method\N\N[Master]\N  Disable=C0114,\N' > .Pylintrc
-Open Vs Code And Press ⌘shiftp (Mac), Or Ctrlshiftp (Windows) To Open The Command Palette, And Select "Python: Select Interpreter".
-Find The Option That Has:
-<Your_folder_name>-<Random_string>
-Pylint Settings For Django
-Add .Vscode Directory And Add A Settings.Json With This Info
-{
-    "Python.Linting.Pylintargs": [
-        "--Load-Plugins=Pylint_django",
-        "--Django-Settings-Module=<Folder Name>.Settings",
-    ],
-}
-Python Manage.Py Startapp Projectnameapi
-Uncomment Out The Pipfile.Lock Line To Make Sure This Gets Ignored
-Add .Vscode To The .Gitignore File.
-Make The Below Changes To The Settings.Py File
+https://github.com/nashville-software-school/server-side-python-curriculum/blob/evening-cohorts/book-3-levelup/chapters/DRF_INSTALLS.md
 
-# Update This
-Installed_apps = [
-    'django.Contrib.Admin',
-    'django.Contrib.Auth',
-    'django.Contrib.Contenttypes',
-    'django.Contrib.Sessions',
-    'django.Contrib.Messages',
-    'django.Contrib.Staticfiles',
-    'rest_framework',
-    'corsheaders',
-    'levelupapi',
-]
+#ERD
 
-# This Is New
-Cors_origin_whitelist = (
-    'http://Localhost:3000',
-    'http://127.0.0.1:3000'
-)
-
-# Update This
-Middleware = [
-    'django.Middleware.Security.Securitymiddleware',
-    'django.Contrib.Sessions.Middleware.Sessionmiddleware',
-    'corsheaders.Middleware.Corsmiddleware',
-    'django.Middleware.Common.Commonmiddleware',
-    'django.Middleware.Csrf.Csrfviewmiddleware',
-    'django.Contrib.Auth.Middleware.Authenticationmiddleware',
-    'django.Contrib.Messages.Middleware.Messagemiddleware',
-    'django.Middleware.Clickjacking.Xframeoptionsmiddleware',
-]
-Python Manage.Py Migrate
-Add The Below To The .Vscode/Launch.Json File
-{
-    "Version": "0.2.0",
-    "Configurations": [
-        {
-            "Name": "Python: Django",
-            "Type": "Python",
-            "Request": "Launch",
-            "Program": "${Workspacefolder}/Manage.Py",
-            "Args": ["Runserver"],
-            "Django": True,
-            "Autoreload":{
-                "Enable": True
-            }
-        }
-    ]
-}
-Python Manage.Py Runserver
-Design Models And Make Migrations
-Create Fixtures
-You Are Ready To Create Views, Models, Urls, Etc.
-Happy Coding!
-
-ERD
-
-VIDEO WALK THROUGH
+#VIDEO WALK THROUGH
 https://www.loom.com/share/2ff029f2aa244e6ca6c585b8901e5792
 
-API DOCUMENTS
+#API DOCUMENTS
+https://documenter.getpostman.com/view/33251382/2sAYQXpYXu
+
+#TECH STACK
+Django
+Python
+Postman
+Firebase Auth
 
 
-TECH STACK
-
-
-BE DEFINITION OF DONE
+#BE DEFINITION OF DONE
 A feature or task is considered "done" when:
 
 All tasks, features, and fixes must be ticketed and included on the GitHub project board. Make sure the project board uses columns like Backlog, In Progress, Testing, and Done to track work.
@@ -111,7 +43,8 @@ The README is updated with any relevant instructions, and a Loom video (max 5 mi
 For any stretch goals, the feature must be functional and demonstrate proper user interaction (e.g., public/private book functionality, simulated purchase).
 Any issues or bugs identified during development or testing must be fixed by the developer. All work related to fixes must be ticketed and included on the GitHub project board.
 The project board must reflect all tasks, bugs, and updates, with each task being moved through the proper columns (Backlog, In Progress, Testing, Done).
-MVP Guidelines
+
+#MVP Guidelines
 The Minimum Viable Product (MVP) for the Simply Books project includes:
 
 CRUD Functionality for Books and Authors:
@@ -146,6 +79,6 @@ Follow the deployment guide to get your app live!
 Follow the Guide:
 
 Detailed steps for each part of the project can be found in the Guide to getting started with this project.
-Submit:
+#Submit:
 
 Make sure to complete the README, Loom video demonstration, and submit your project with the deployed link.
